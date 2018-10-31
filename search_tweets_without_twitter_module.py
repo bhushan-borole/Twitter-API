@@ -16,5 +16,7 @@ r = requests.get(url = 'https://api.twitter.com/1.1/search/tweets.json?q=' + sea
 data = r.json()
 
 for tweets in data['statuses']:
-        print(tweets['text'])
+        print('User: ' + tweets['user']['screen_name'])
+        print('Created At: ' + tweets['created_at'])
+        print('Text: ' + tweets['text'])
         print('-----------------------------------------------------------------------------')
