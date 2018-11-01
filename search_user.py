@@ -4,6 +4,7 @@ from tweepy import Cursor
 import json
 
 
+
 with open("twitter_credentials.json", "r") as file:
 	creds = json.load(file)
 
@@ -25,3 +26,5 @@ print("Description: " + str(item.description))
 print("Friends_count: " + str(item.friends_count))
 print("Followers_count: " + str(item.followers_count))
 print("Created At: " + str(item.created_at))
+print("Profile Image Url: " + str(item.profile_image_url))
+
