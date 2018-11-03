@@ -24,6 +24,6 @@ for tweets in data['statuses']:
         print('User: ' + tweets['user']['screen_name'])
         print('Created At: ' + tweets['created_at'])
         print('Text: ' + tweets['text'].translate(non_bmp_map))
-        print('-----------------------------------------------------------------------------')
+        print(''.join(['-']*15))
 
         
