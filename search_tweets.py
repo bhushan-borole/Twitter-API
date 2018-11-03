@@ -14,7 +14,7 @@ python_tweets = Twython(creds['CONSUMER_KEY'], creds['CONSUMER_SECRET'])
 search = input("Enter keyword: ")
 max_attempts = int(input("Enter Max Attempts: "))
 
-COUNT = 500
+COUNT = 1000
 tweets = {}
 
 #----------------------------------------------------------------#
