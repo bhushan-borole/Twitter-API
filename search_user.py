@@ -4,7 +4,6 @@ from tweepy import Cursor
 import json
 
 
-
 with open("twitter_credentials.json", "r") as file:
 	creds = json.load(file)
 
