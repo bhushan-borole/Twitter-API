@@ -34,7 +34,7 @@ for tweets in data['statuses']:
     print(''.join(['-']*15))
     COUNT += 1
 
-for i in range(0, 10):
+for i in range(0, 40):
 	try:
 		r1 = requests.get(url = url + search + '&count=200&max_id=' + str(max_id), auth = auth) # pass max_id as the parameter to the request
 

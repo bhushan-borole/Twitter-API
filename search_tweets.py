@@ -14,7 +14,7 @@ python_tweets = Twython(creds['CONSUMER_KEY'], creds['CONSUMER_SECRET'])
 search = input("Enter keyword: ")
 max_attempts = int(input("Enter Max Attempts: "))
 
-COUNT = 500
+COUNT = 3000
 tweets = {}
 
 #----------------------------------------------------------------#
@@ -35,13 +35,15 @@ for i in range(0, max_attempts):
         
         for result in results['statuses']:
             tweets[result['user']['screen_name']] = result['text'].translate(non_bmp_map)
-
+            next_max_id = result['id']
+        '''
 
         try:
             next_results_url_params = results['search_metadata']['next_results']
             next_max_id = next_results_url_params.split('max_id=')[1].split('&')[0]  
         except:
             break
+        '''
 
 
 for k, v in tweets.items():
