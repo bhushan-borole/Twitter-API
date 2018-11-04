@@ -30,13 +30,13 @@ for tweets in data['statuses']:
     print('User: ' + tweets['user']['screen_name'])
     print('Created At: ' + tweets['created_at'])
     print('Text: ' + tweets['text'].translate(non_bmp_map))
-    max_id = tweets['id']                                          #fetch max_id of the last tweet of the first request
+    MAX_ID = tweets['id']                                          #fetch max_id of the last tweet of the first request
     print(''.join(['-']*15))
     COUNT += 1
 
 for i in range(0, 40):
 	try:
-		r1 = requests.get(url = url + search + '&count=200&max_id=' + str(max_id), auth = auth) # pass max_id as the parameter to the request
+		r1 = requests.get(url = url + search + '&count=200&max_id=' + str(MAX_ID), auth = auth) # pass max_id as the parameter to the request
 
 		data1 = r1.json()
 
@@ -44,7 +44,7 @@ for i in range(0, 40):
 		    print('User: ' + tweets['user']['screen_name'])
 		    print('Created At: ' + tweets['created_at'])
 		    print('Text: ' + tweets['text'].translate(non_bmp_map))
-		    max_id = tweets['id']                                 
+		    MAX_ID = tweets['id']                                 
 		    print(''.join(['-']*15))
 		    COUNT += 1
 
