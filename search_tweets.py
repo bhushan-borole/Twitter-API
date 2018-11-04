@@ -28,7 +28,7 @@ for i in range(0, max_attempts):
             break
 
         if i == 0:
-            results = python_tweets.search(q = search, count = '100')
+            results = python_tweets.search(q = search, count = '200')
         else:
             results = python_tweets.search(q = search, include_entities = 'true', max_id = next_max_id)
 
