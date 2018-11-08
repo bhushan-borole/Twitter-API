@@ -1,4 +1,4 @@
-# Search Tweets Using Python
+# Twitter API
 
 Run this script first to enter your credentials into a json file
 
@@ -18,3 +18,41 @@ credentials['ACCESS_SECRET'] = ...
 with open("twitter_credentials.json", "w") as file:  
     json.dump(credentials, file)
 ```
+
+1) Search Tweets with twitter module based on a keyword:
+	Run:
+	```python
+	python search_tweets.py
+	```
+
+2) Search Tweets without twitter module based on a keyword:
+	Run:
+	```python
+	python search_tweets_without_twitter_module.py
+	```
+
+3) Search Tweets of a particular user:
+	Run:
+	```python
+	# input must me twitter username, of that particular user
+	python get_user's_tweets.py
+	```
+
+4) Search details of a particular user:
+	Run:
+	```python
+	# input must me twitter username, of that particular user
+	python get_user.py
+	```
+
+5) Get the percentage of positive, negative and neutral tweets based on a keyword:
+	Run:
+	```python
+	python get_sentiments.py
+	```
+
+6) Plot sentiments of tweets alongwith company's closing prices for a particular week:
+	Run:
+	```python
+	python stock_vs_tweets.py
+	```
