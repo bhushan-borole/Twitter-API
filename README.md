@@ -1,9 +1,8 @@
 # Twitter API
 
 - This repository is my basic project to integrate Twitter API with python.
-- I performed basic functions while handling with API.
 
-Before using these files make sure you have created a twitter app. If not click here [Twitter App](https://apps.twitter.com/ "Twitter App")
+- Before using these files make sure you have created a twitter app. If not click here [Twitter App](https://apps.twitter.com/ "Twitter App")
 
 Run this script first to enter your credentials into a json file
 
