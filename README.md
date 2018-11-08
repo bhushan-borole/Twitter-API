@@ -39,7 +39,7 @@ with open("twitter_credentials.json", "w") as file:
 	
 	```python
 	# input must me twitter username, of that particular user
-	python get_user's_tweets.py
+	python get_users_tweets.py
 	```
 
 4) Search details of a particular user:
