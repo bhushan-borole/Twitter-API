@@ -19,8 +19,8 @@ with open("twitter_credentials.json", "w") as file:
     json.dump(credentials, file)
 ```
 
-1) Search Tweets with twitter module based on a keyword:   return
-	run:
+1) Search Tweets with twitter module based on a keyword:
+
 	```python
 	python search_tweets.py
 	```
