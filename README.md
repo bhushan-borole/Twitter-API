@@ -4,7 +4,7 @@
 
 - Before using these files make sure you have created a twitter app. If not click here [Twitter App](https://apps.twitter.com/ "Twitter App")
 
-Run this script first to enter your credentials into a json file
+- Run this script first to enter your credentials into a json file
 
 ```python
 import json
