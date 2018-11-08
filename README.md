@@ -1,5 +1,8 @@
 # Twitter API
 
+-This repository is my basic project to integrate Twitter API with python.\
+-I performed basic functions while handling with API.\
+
 Run this script first to enter your credentials into a json file
 
 ```python
@@ -19,8 +22,8 @@ with open("twitter_credentials.json", "w") as file:
     json.dump(credentials, file)
 ```
 
-1) Search Tweets with twitter module based on a keyword:\
-	Run: 
+1) Search Tweets with twitter module based on a keyword:
+
 	```python
 	python search_tweets.py
 	```
