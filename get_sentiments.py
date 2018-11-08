@@ -34,36 +34,45 @@ class Twitter_Client:
 
 
     def get_tweets(self, search):
-        try: 
+        try:
             all_tweets = {}
             r = requests.get(url = url + search + '&count=200&lang=en', auth = self.auth)
             data = r.json()
             MAX_ID = 0
+
             for tweet in data['statuses']:
-                sentiment = self.get_sentiment(tweet['text'].translate(non_bmp_map))
+                user = tweet['user']['screen_name']
+                text = tweet['text'].translate(non_bmp_map)
+                created_at = tweet['created_at']
+                sentiment = self.get_sentiment(text)
+                
                 # first tweet of every user
-                if tweet['user']['screen_name'] in all_tweets:
-                    all_tweets[tweet['user']['screen_name']].append([tweet['text'].translate(non_bmp_map), sentiment])
+                if user in all_tweets:
+                    all_tweets[user].append([text, sentiment, created_at])
                 # if user exists then append their tweets    
                 else: 
-                    all_tweets[tweet['user']['screen_name']] = [[tweet['text'].translate(non_bmp_map), sentiment]]
+                    all_tweets[user] = [[text, sentiment, created_at]]
                 MAX_ID = tweet['id']
 
             for i in range(0,30):
                 r1 = requests.get(url = url + search + '&count=200&lang=en&max_id=' + str(MAX_ID), auth = self.auth)
                 data1 = r1.json()
+
                 for tweet in data1['statuses']:
-                    sentiment = self.get_sentiment(tweet['text'].translate(non_bmp_map))
+                    user = tweet['user']['screen_name']
+                    text = tweet['text'].translate(non_bmp_map)
+                    created_at = tweet['created_at']
+                    sentiment = self.get_sentiment(text)
+
                     # first tweet of every user
-                    if tweet['user']['screen_name'] in all_tweets:
-                        all_tweets[tweet['user']['screen_name']].append([tweet['text'].translate(non_bmp_map), sentiment])
+                    if user in all_tweets:
+                        all_tweets[user].append([text, sentiment, created_at])
                     # if user exists then append their tweets 
                     else:
-                        all_tweets[tweet['user']['screen_name']] = [[tweet['text'].translate(non_bmp_map), sentiment]]
+                        all_tweets[user] = [[text, sentiment, created_at]]
                     MAX_ID = tweet['id']
-            
-            return all_tweets
 
+            return all_tweets
         except Exception as e:
             print(e)
 
@@ -91,7 +100,7 @@ def  main():
     print('Positive Tweets: {}%'.format(round(count_positive / len(all_tweets) * 100, 2)))
     print('Negative Tweets: {}%'.format(round(count_negative / len(all_tweets) * 100, 2)))
     print('Neutral Tweets: {}%'.format(round(count_neutral / len(all_tweets) * 100, 2)))
-    print('Count Of Tweets: {}'.format(len(all_tweets)))
+    print('Count Of Tweets: {}'.format(count_positive + count_negative + count_neutral))
 
 if __name__ == '__main__':
     main()
