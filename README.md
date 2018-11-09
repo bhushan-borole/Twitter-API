@@ -58,5 +58,6 @@ with open("twitter_credentials.json", "w") as file:
 6) Plot sentiments of tweets alongwith company's closing prices for a particular week:
 	
 	```python
+	# for example if you want to check for the company NIFTY, enter INFY
 	python stock_vs_tweets.py
 	```
